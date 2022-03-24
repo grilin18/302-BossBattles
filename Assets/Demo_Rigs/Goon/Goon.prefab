@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1626b89dedf554190019dc4be82136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetweenGroundAndIK: 0
+  raycastLength: 1
 --- !u!1 &455003606
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1626b89dedf554190019dc4be82136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetweenGroundAndIK: 0
+  raycastLength: 1
 --- !u!1 &1000143903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130cd2a7d1fa0b6498054192a2c9573e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footLeft: {fileID: 31189097}
+  footRight: {fileID: 455003609}
   speed: 5
 --- !u!1 &4881401670579937235
 GameObject:

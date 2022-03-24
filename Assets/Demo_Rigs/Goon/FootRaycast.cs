@@ -8,6 +8,9 @@ public class FootRaycast : MonoBehaviour
 
     private Quaternion startingRot;
 
+    private Vector3 groundPosition;
+    private Quaternion groundRotation;
+
     public float raycastLength = 2;
 
     // Start is called before the first frame update
@@ -20,20 +23,30 @@ public class FootRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 origin = transform.position + Vector3.up * raycastLength/2;
+        
+
+
+
+
+
+    }
+
+    private void FindGround()
+    {
+        Vector3 origin = transform.position + Vector3.up * raycastLength / 2;
         Vector3 direction = Vector3.down;
 
-        
+
 
         Debug.DrawRay(origin, direction * raycastLength, Color.blue);
 
-        if(Physics.Raycast(origin, direction, out RaycastHit hitInfo, raycastLength))
+        if (Physics.Raycast(origin, direction, out RaycastHit hitInfo, raycastLength))
         {
-            transform.position = hitInfo.point + Vector3.up * distanceBetweenGroundAndIK;
+            groundPosition = hitInfo.point + Vector3.up * distanceBetweenGroundAndIK;
 
             Quaternion worldNeutral = transform.parent.rotation * startingRot;
 
-            transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal) * worldNeutral;
+            groundRotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal) * worldNeutral;
         }
     }
 }
